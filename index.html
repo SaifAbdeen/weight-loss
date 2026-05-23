@@ -301,48 +301,33 @@ const NUTRI={
     {lbl:'ماء',val:'3',unit:'لتر',col:'#06b6d4'},
   ],
   meals:[
-    {time:'5:30 ص',name:'قبل التمرين',emoji:'🌅',tag:'اختياري',tagCol:'#22c55e',
-     note:'لو تمرينك صبحي — شي خفيف يعطيك طاقة',
-     items:['🍌 موزة واحدة أو 3 تمرات','💧 كوب ماء كبير (500ml)'],
-     p:3,c:27,f:0,cal:120},
-    {time:'6:40 ص',name:'الإفطار',emoji:'🍳',tag:'بعد التمرين',tagCol:'#3b82f6',
-     note:'أهم وجبة — الجسم بيبني العضل هلق ولازم بروتين',
-     items:['🥚 3 بيض مقلي بزيت زيتون (ملعقة صغيرة)','🍞 شريحة خبز توست بر','☕ قهوة أو شاي بدون سكر','💧 كوب ماء'],
-     p:22,c:25,f:14,cal:314},
-    {time:'10:00 ص',name:'وجبة الضحى',emoji:'🥫',tag:'بالشغل',tagCol:'#f97316',
-     note:'خفيف وعالي البروتين — يمنع الجوع حتى الغداء',
-     items:['🥫 علبة تونا بالماء (185g) مع ليمون','🍎 ثمرة فاكهة: تفاحة أو برتقالة','💧 2 كوب ماء'],
-     p:35,c:22,f:2,cal:246},
-    {time:'1:30 م',name:'الغداء',emoji:'🍗',tag:'برا / مطعم',tagCol:'#ef4444',
-     note:'الوجبة الأهم بالشغل — خيارات عملية 100%',
-     items:['✅ الخيار الأول: شاورما دجاج بدون خبز (صحن)','✅ الخيار الثاني: دجاج مشوي + رز + سلطة','✅ الخيار الثالث: سلطة كبيرة + صدر دجاج مشوي','❌ تجنب: بطاطا مقلية · مشروبات سكرية · صوص زيادة'],
-     p:45,c:55,f:12,cal:508},
-    {time:'5:00 م',name:'سناك العصر',emoji:'🥛',tag:'اختياري',tagCol:'#6b7280',
-     note:'يمنع الأكل الزيادة بالعشاء — مفيد جداً',
-     items:['🥛 زبادي يوناني 200g سادة (بدون سكر)','🥜 20g مكسرات غير محمصة وغير مملحة'],
-     p:13,c:13,f:9,cal:185},
+    {time:'6:30 ص',name:'الإفطار',emoji:'🍳',tag:'بعد التمرين',tagCol:'#3b82f6',
+     note:'أهم وجبة — الجسم بيبني العضل هلق، لازم بروتين',
+     items:['🥚 3 بيض مقلي أو مسلوق','🍞 شريحتين خبز توست بر','☕ قهوة أو شاي بدون سكر','💧 كوب ماء كبير'],
+     p:22,c:28,f:14,cal:314},
+    {time:'1:30 م',name:'الغداء',emoji:'🍗',tag:'بالشغل',tagCol:'#f97316',
+     note:'الوجبة الأهم اللي لازم تضبطها — خياراتك بالشغل:',
+     items:['🥇 تونة من البيت — الأفضل دايماً (3 مرات أسبوعياً)',
+            '🥈 شاورما دجاج صحن بدون خبز — صوص جانبي',
+            '🥉 فلافل صحن مش ساندوتش',
+            '⚠️ عرايس — نص الكمية بس',
+            '❌ زنجر / برغر / كريسبي — مرة بالأسبوع كحد أقصى'],
+     p:40,c:45,f:10,cal:430},
     {time:'7:30 م',name:'العشاء',emoji:'🍽️',tag:'البيت',tagCol:'#22c55e',
-     note:'وجبة متوازنة — بروتين + خضار + كربوهيدرات خفيفة',
-     items:['🍗 صدر دجاج مشوي 200g (أو سمك)','🥗 خضار متنوعة مطبوخة أو سلطة كبيرة','🍚 نص كوب رز أبيض أو كوب رز بني'],
-     p:47,c:40,f:5,cal:389},
-    {time:'10:00 م',name:'سناك الليل',emoji:'🌙',tag:'قبل النوم',tagCol:'#4f46e5',
-     note:'بروتين بطيء الامتصاص — يحمي العضل أثناء النوم',
-     items:['🧀 قريش جبن 150g أو لبنة خفيفة','🥚 بيضتان مسلوقتان (اختياري)','💧 كوب ماء'],
-     p:22,c:8,f:2,cal:138},
+     note:'بروتين + خضار + كربوهيدرات خفيفة',
+     items:['🍗 صدر دجاج مشوي 200g أو سمك','🥗 خضار مطبوخة أو سلطة كبيرة','🍚 نص كوب رز'],
+     p:47,c:35,f:5,cal:377},
   ],
-  avoid:[
-    {e:'🥤',t:'مشروبات سكرية — كولا، عصير معبأ، نسكافيه محلى'},
-    {e:'🍟',t:'مقليات — بطاطا مقلية، فلافل، سمبوسة'},
-    {e:'🍕',t:'وجبات سريعة — بيتزا، برغر، ساندوتش كروسان'},
-    {e:'🍬',t:'حلويات يومية — كيك، شوكولاتة، بسكويت'},
-    {e:'🍞',t:'خبز أبيض كمية زيادة — توست واحد بالإفطار بس'},
-  ],
-  tips:[
-    {e:'⏰',t:'وجبة كل 3–4 ساعات — تمنع الجوع وتحافظ على العضل'},
-    {e:'🥩',t:'بروتين بكل وجبة — موزّع على اليوم أفضل من كله بوجبة واحدة'},
-    {e:'💧',t:'اشرب كوب ماء قبل كل وجبة — يقلل الكمية المأكولة تلقائياً'},
-    {e:'🎯',t:'اليوم اللي بتفشل فيه؟ الوجبة الجاية صح — مش اليوم كله ينهار'},
-    {e:'📱',t:'MyFitnessPal أول أسبوعين فقط — عشان تتعلم تقدّر الكميات'},
+  snack:{
+    note:'إذا جعان بعد العشاء (اختياري):',
+    items:['🥚 بيضتان مسلوقتان','🧀 لبنة أو قريش جبن 100g']
+  },
+  rules:[
+    {e:'💧',t:'كوب ماء قبل كل وجبة — يقلل الكمية تلقائياً'},
+    {e:'🥩',t:'بروتين بكل وجبة بدون استثناء — بيض، دجاج، تونة، لبنة'},
+    {e:'📏',t:'قس وزنك كل أحد صباحاً — نفس الوقت، نفس الظروف'},
+    {e:'😄',t:'فشلت وجبة؟ الوجبة الجاية صح — مش اليوم كله ينهار'},
+    {e:'🚫',t:'المشروبات السكرية وحدها ممكن تخرّب كل شي — ماء وبس'},
   ]
 };
 
@@ -514,6 +499,8 @@ function renderContent(){
 // ── NUTRITION ──
 function renderNutrition(){
   const nu=document.getElementById('nu-area');
+  const ph=PHASES[pi];
+
   // Targets
   const tgHTML=`<div class="wo-sec">
     <div class="sec-hdr"><span class="sec-hdr-t" style="color:#f97316">🎯 الأهداف اليومية</span></div>
@@ -528,7 +515,8 @@ function renderNutrition(){
   </div>`;
 
   // Meals
-  const mlHTML=NUTRI.meals.map(m=>`
+  const mlHTML=`<div class="sec-lbl">🍽️ الوجبات الـ 3 بس</div>
+    ${NUTRI.meals.map(m=>`
     <div class="meal-card">
       <div class="meal-head">
         <span class="meal-time">${m.time}</span>
@@ -548,38 +536,39 @@ function renderNutrition(){
         <span class="m-chip" style="color:#a855f7">🥑 ${m.f}g دهن</span>
         <span class="m-chip" style="color:#f97316">🔥 ${m.cal} kcal</span>
       </div>
-    </div>`).join('');
+    </div>`).join('')}`;
 
-  // Avoid
-  const avHTML=NUTRI.avoid.map(x=>`
-    <div class="avoid-item">
-      <span class="avoid-e">${x.e}</span>
-      <span class="avoid-t">${x.t}</span>
-    </div>`).join('');
+  // Snack
+  const snHTML=`<div class="wo-sec" style="border-color:#374151">
+    <div class="sec-hdr"><span class="sec-hdr-t" style="color:#6b7280">🌙 سناك اختياري (إذا جعت)</span></div>
+    <div style="padding:12px 16px">
+      ${NUTRI.snack.items.map(i=>`<div style="font-size:13px;color:#e5e7eb;padding:4px 0">${i}</div>`).join('')}
+    </div>
+  </div>`;
 
-  // Tips
-  const tpHTML=NUTRI.tips.map(x=>`
-    <div class="ntip-item">
-      <span class="ntip-e">${x.e}</span>
-      <span class="ntip-t">${x.t}</span>
-    </div>`).join('');
+  // Rules
+  const ruHTML=`<div class="sec-lbl">⚡ القواعد الذهبية</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      ${NUTRI.rules.map(r=>`
+        <div class="rt-tip">
+          <span class="rt-e">${r.e}</span>
+          <span class="rt-t">${r.t}</span>
+        </div>`).join('')}
+    </div>`;
 
-  // Total summary
   const totCal=NUTRI.meals.reduce((s,m)=>s+m.cal,0);
   const totP=NUTRI.meals.reduce((s,m)=>s+m.p,0);
 
   nu.innerHTML=`
     ${tgHTML}
-    <div class="sec-lbl">🍽️ جدول الوجبات اليومي</div>
-    <div style="background:#111827;border-radius:14px;padding:10px 14px;border:1px solid #1f2937;margin-bottom:4px">
-      <div style="font-size:12px;color:#9ca3af">مجموع الخطة: <span style="color:#f97316;font-weight:700">${totCal} kcal</span> · بروتين: <span style="color:#3b82f6;font-weight:700">${totP}g</span> · الهدف 2000 kcal</div>
+    <div style="background:#111827;border-radius:14px;padding:10px 14px;border:1px solid #1f2937">
+      <div style="font-size:12px;color:#9ca3af">مجموع الوجبات الـ 3: <span style="color:#f97316;font-weight:700">${totCal} kcal</span> · بروتين: <span style="color:#3b82f6;font-weight:700">${totP}g</span></div>
+      <div style="font-size:11px;color:#4b5563;margin-top:4px">الباقي من السناك + الإضافات اليومية = ~2000 kcal</div>
     </div>
     ${mlHTML}
-    <div class="sec-lbl">🚫 تجنّب هذا</div>
-    <div style="display:flex;flex-direction:column;gap:8px">${avHTML}</div>
-    <div class="sec-lbl">💡 نصائح ذهبية</div>
-    <div style="display:flex;flex-direction:column;gap:8px">${tpHTML}</div>
-    <div class="n-yel">⚠️ <strong>قاعدة الـ 80/20:</strong> التزم 80% من الوقت — الـ 20% الثانية مش بتكسر الخطة. الاستمرارية أهم من الكمال</div>
+    ${snHTML}
+    ${ruHTML}
+    <div class="n-yel">⚠️ <strong>قاعدة الـ 80/20:</strong> التزم 80% من الوقت — الـ 20% ما بتكسر الخطة. الاستمرارية أهم من الكمال</div>
   `;
   nu.classList.remove('fi');void nu.offsetWidth;nu.classList.add('fi');
 }
