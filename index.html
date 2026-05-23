@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>خطة التحول 🏆</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{font-size:16px;-webkit-text-size-adjust:100%}
+body{background:#07070f;color:#fff;font-family:-apple-system,Arial,sans-serif;min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{border:none;background:none;cursor:pointer;font-family:inherit;touch-action:manipulation;color:inherit}
+button:active{opacity:.8;transform:scale(.96);transition:all .08s}
+
+#hdr{position:sticky;top:0;z-index:100;background:rgba(7,7,15,.92);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border-bottom:1px solid #1f2937;padding:14px 16px 12px;padding-top:calc(14px + env(safe-area-inset-top,0px))}
+.hdr-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.cdown{border-radius:16px;padding:8px 14px;text-align:center;background:linear-gradient(135deg,#f97316,#ef4444);box-shadow:0 4px 20px rgba(249,115,22,.4);min-width:58px}
+.cdown-n{font-size:26px;font-weight:900;line-height:1;display:block}
+.cdown-l{font-size:10px;color:rgba(255,220,190,.9);display:block;margin-top:2px}
+.pb-wrap{height:3px;background:#1f2937;border-radius:4px;overflow:hidden}
+.pb-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#f97316,#ef4444);transition:width 1s ease}
+.pb-lbls{display:flex;justify-content:space-between;margin-top:4px}
+
+#main{padding:16px;padding-bottom:calc(36px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+
+.view-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.view-tab{border-radius:14px;padding:12px;font-size:14px;font-weight:700;border:2px solid #1f2937;background:#0f0f1a;color:#6b7280;text-align:center;transition:all .2s;width:100%}
+
+.sec-lbl{font-size:11px;color:#4b5563;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+
+.ph-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px}
+.ph-btn{border-radius:16px;padding:12px 6px;border:2px solid #1f2937;background:#0f0f1a;text-align:center;transition:all .2s;width:100%}
+.ph-n{font-weight:900;font-size:18px;display:block;color:#4b5563}
+.ph-wk{font-size:10px;display:block;margin-top:2px;color:#374151}
+.ph-fc{font-size:11px;display:block;margin-top:3px;color:#4b5563}
+.tip-box{border-radius:12px;padding:10px 14px;border:1px solid;font-size:12px}
+
+.scroll-x{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.scroll-x::-webkit-scrollbar{display:none}
+.day-btn{flex-shrink:0;border-radius:16px;padding:10px 10px 8px;border:2px solid #1f2937;background:#0f0f1a;text-align:center;min-width:62px;transition:all .2s}
+.day-e{font-size:18px;display:block}
+.day-s{font-size:11px;font-weight:600;display:block;margin-top:3px;color:#6b7280}
+.day-tag{font-size:10px;font-weight:700;display:block;margin-top:2px}
+
+.d-hdr{background:#111827;border-radius:20px;border:1px solid #1f2937;padding:16px}
+.d-title-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.d-title-l{display:flex;align-items:center;gap:10px}
+.d-emoji{font-size:30px}
+.d-dur{background:#0f0f1a;border-radius:12px;padding:8px 12px;text-align:center;flex-shrink:0}
+.d-dur-l{font-size:10px;color:#6b7280;display:block}
+.d-dur-v{font-size:14px;font-weight:700;display:block}
+.q-box{background:#0f0f1a;border-radius:12px;padding:10px 14px;margin-bottom:12px;border-right:3px solid}
+.q-text{font-size:13px;font-style:italic}
+.mode-row{display:flex;gap:8px;margin-bottom:8px}
+.mode-btn{flex:1;padding:9px;border-radius:12px;font-size:12px;font-weight:700;border:2px solid #374151;background:transparent;color:#4b5563;transition:all .2s}
+.sched-box{background:#0f0f1a;border-radius:12px;padding:8px 14px}
+.sched-txt{font-size:11px;color:#e5e7eb;line-height:1.7;display:block}
+
+.wo-sec{background:#111827;border-radius:20px;border:1px solid #1f2937;overflow:hidden}
+.sec-hdr{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #1f2937;background:#0d0d1a}
+.sec-hdr-t{font-weight:700;font-size:13px}
+.sec-pills{display:flex;gap:6px}
+.pill{font-size:11px;padding:2px 8px;border-radius:20px;background:#1f2937;color:#6b7280}
+.sec-note{padding:8px 16px;border-bottom:1px solid #1f2937;background:#0f1626}
+.sec-note-t{font-size:12px;color:#cbd5e1}
+.ss-banner{padding:7px 16px;border-bottom:1px solid #1f2937;background:rgba(59,7,100,.18);text-align:center}
+.ss-banner-t{font-size:12px;color:#c084fc;font-weight:600}
+
+.ex-card{padding:16px;border-bottom:1px solid #1f2937}
+.ex-card:last-child{border-bottom:none}
+.ex-nr{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:12px}
+.ex-ar{font-weight:800;font-size:14px}
+.ex-en{font-size:11px;color:#6b7280;margin-top:3px}
+.rep-b{border-radius:12px;padding:6px 10px;flex-shrink:0;text-align:center}
+.rep-n{font-weight:900;font-size:14px}
+.rep-l{font-size:11px;color:#9ca3af}
+.w-box{border-radius:14px;padding:12px;margin-bottom:10px}
+.w-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.w-left{flex:1;min-width:0}
+.w-ph-lbl{font-size:11px;color:#9ca3af;margin-bottom:4px}
+.w-num{font-weight:900;line-height:1;font-size:26px}
+.w-cfg{font-size:11px;margin-top:6px;line-height:1.4}
+.ph-pills{display:flex;gap:4px;flex-shrink:0}
+.ph-pill{border-radius:10px;padding:6px;text-align:center;min-width:36px;background:#1f2937}
+.ph-pill-n{font-size:10px;line-height:1;display:block;color:#6b7280}
+.ph-pill-w{font-size:11px;font-weight:900;margin-top:3px;display:block;color:#9ca3af}
+.ex-tip{border-radius:10px;padding:8px 12px;background:#1f2937}
+.ex-tip-t{font-size:12px;color:#fde68a}
+.ex-rest{font-size:11px;color:#374151;text-align:center;margin-top:6px}
+
+.c-row{background:#111827;border-radius:16px;border:1px solid #1f2937;padding:14px}
+.c-row-t{font-weight:700;font-size:14px;margin-bottom:10px}
+.c-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.c-cell{background:#0f0f1a;border-radius:12px;padding:10px 8px;text-align:center}
+.c-cell-l{font-size:10px;color:#6b7280;margin-bottom:4px;display:block}
+.c-cell-v{font-weight:900;font-size:13px;display:block}
+
+.rt-tip{background:#0f0f1a;border:1px solid #1f2937;border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.rt-e{font-size:22px;flex-shrink:0}
+.rt-t{font-size:13px;color:#e5e7eb}
+
+.n-cyan{border-radius:12px;padding:10px 14px;border:1px solid #164e63;background:#0c2233;font-size:12px;color:#67e8f9}
+.n-yel{border-radius:12px;padding:10px 14px;border:1px solid #78350f;background:#1c0a00;font-size:12px;color:#fde68a}
+.n-blue{border-radius:14px;padding:12px 14px;border:1px solid #1d4ed8;background:linear-gradient(135deg,#1e3a5f,#0c1a2e);display:flex;align-items:center;gap:12px}
+.n-pre{border-radius:14px;padding:12px 14px;border:1px solid #854d0e;background:#1c0a00;display:flex;align-items:center;gap:10px}
+
+/* ── NUTRITION ── */
+.macro-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px}
+.macro-card{background:#0f0f1a;border-radius:14px;padding:12px;text-align:center;border:1px solid #1f2937}
+.macro-card-full{grid-column:1/-1}
+.macro-val{font-weight:900;font-size:24px;line-height:1}
+.macro-unit{font-size:11px;color:#9ca3af;margin-top:2px;display:block}
+.macro-lbl{font-size:11px;color:#6b7280;margin-top:4px;display:block}
+
+.meal-card{background:#111827;border-radius:20px;border:1px solid #1f2937;overflow:hidden}
+.meal-head{display:flex;justify-content:space-between;align-items:flex-start;padding:14px 16px 0}
+.meal-time{font-size:11px;color:#6b7280;background:#1f2937;padding:3px 8px;border-radius:8px;font-weight:600}
+.meal-tag{font-size:10px;font-weight:700;padding:3px 8px;border-radius:8px}
+.meal-title-row{display:flex;align-items:center;gap:8px;padding:8px 16px 4px}
+.meal-emoji{font-size:22px}
+.meal-name{font-weight:800;font-size:15px}
+.meal-note{font-size:11px;color:#9ca3af;padding:0 16px 10px;border-bottom:1px solid #1f2937}
+.meal-items{padding:10px 16px}
+.meal-item{font-size:13px;color:#e5e7eb;padding:4px 0;line-height:1.5;display:block}
+.meal-macros{display:flex;gap:6px;padding:10px 16px 14px;flex-wrap:wrap}
+.m-chip{font-size:11px;font-weight:700;padding:3px 8px;border-radius:8px;background:#1f2937;color:#9ca3af}
+
+.avoid-item{background:#0f0f1a;border:1px solid #1f2937;border-radius:14px;padding:11px 14px;display:flex;align-items:center;gap:10px}
+.avoid-e{font-size:20px;flex-shrink:0}
+.avoid-t{font-size:13px;color:#e5e7eb}
+
+.ntip-item{background:#0f0f1a;border:1px solid #1f2937;border-radius:14px;padding:11px 14px;display:flex;align-items:center;gap:10px}
+.ntip-e{font-size:20px;flex-shrink:0}
+.ntip-t{font-size:13px;color:#e5e7eb}
+
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fi .22s ease forwards}
+</style>
+</head>
+<body>
+
+<div id="hdr">
+  <div class="hdr-row">
+    <div>
+      <div style="font-size:20px;font-weight:900;letter-spacing:-.3px">🏆 خطة التحول</div>
+      <div style="font-size:11px;color:#6b7280;margin-top:2px">86 → 79 كيلو · العرس ٩ أغسطس ٢٠٢٦</div>
+    </div>
+    <div class="cdown">
+      <span class="cdown-n" id="daysLeft">—</span>
+      <span class="cdown-l">يوم</span>
+    </div>
+  </div>
+  <div class="pb-wrap"><div class="pb-fill" id="pbFill" style="width:2%"></div></div>
+  <div class="pb-lbls">
+    <span style="font-size:10px;color:#374151">٢٢ مايو</span>
+    <span style="font-size:10px;color:#374151">٩ أغسطس 🎊</span>
+  </div>
+</div>
+
+<div id="main">
+  <div class="view-tabs">
+    <button class="view-tab" id="tab-wo" onclick="setView('workout')">💪 التمرين</button>
+    <button class="view-tab" id="tab-nu" onclick="setView('nutrition')">🥗 التغذية</button>
+  </div>
+  <div id="wo-area">
+    <section>
+      <div class="sec-lbl">المرحلة الحالية</div>
+      <div class="ph-grid" id="phBtns"></div>
+      <div class="tip-box" id="phTip"></div>
+    </section>
+    <section>
+      <div class="sec-lbl">اليوم</div>
+      <div class="scroll-x" id="dayTabs"></div>
+    </section>
+    <div id="content"></div>
+  </div>
+  <div id="nu-area" style="display:none;flex-direction:column;gap:14px"></div>
+</div>
+
+<script>
+const PHASES=[
+  {n:'P1',full:'Phase 1',wks:'أسبوع 1–2',focus:'التأسيس 🧱',col:'#3b82f6',tip:'الفورم أهم من الوزن — جسمك بيتكيف خلال الأسبوعين هدول'},
+  {n:'P2',full:'Phase 2',wks:'أسبوع 3–6',focus:'الضغط 🔥',col:'#f97316',tip:'زد الوزن بمجرد تكمل التكرارات نظيفة — هيك بيصير التطور الحقيقي'},
+  {n:'P3',full:'Phase 3',wks:'أسبوع 7–10',focus:'الذروة ⚡',col:'#ef4444',tip:'أوزان ثابتة — زيّد الكارديو وقلّل الكربوهيدرات المكررة هلق'},
+];
+const DAYS=[
+  {id:0,s:'أحد',   type:'push',  e:'💪',tag:'PUSH',  c:'#f97316'},
+  {id:1,s:'اثنين', type:'cardio',e:'🏃',tag:'CARDIO',c:'#06b6d4'},
+  {id:2,s:'ثلاثاء',type:'pull',  e:'🎯',tag:'PULL',  c:'#3b82f6'},
+  {id:3,s:'أربعاء',type:'rest',  e:'😴',tag:'REST',  c:'#6b7280'},
+  {id:4,s:'خميس',  type:'legs',  e:'🦵',tag:'LEGS',  c:'#22c55e'},
+  {id:5,s:'جمعة',  type:'cardio',e:'🏃',tag:'CARDIO',c:'#06b6d4'},
+  {id:6,s:'سبت',   type:'rest',  e:'🛌',tag:'REST',  c:'#6b7280'},
+];
+const WO={
+  push:{emoji:'💥',title:'PUSH DAY',sub:'صدر · أكتاف · ترايسبس',dur:'33 دق',col:'#f97316',
+    quote:'اليوم بتبني الصدر اللي بتحلم فيه! 🔥',
+    sched:{morning:'05:50 صحي ← 06:00 إحماء ← 06:05 تمرين ← 06:38 (+10 دق كارديو)',evening:'19:00 إحماء ← 19:05 تمرين ← 19:38 شاور'},
+    secs:[
+      {id:'A',lbl:'⚡ MAIN LIFT',lc:'#f97316',type:'straight',sl:'4 سيتات',rl:'90 ث',exs:[
+        {ar:'بنش بريس بالبار',en:'Barbell Bench Press',m:'صدر كامل',rp:'8-10',rest:'90 ث',
+         w:['30 kg','32.5 kg','40 kg'],c:['بار + 2×10','بار + 2×10 + 2×1.25','بار + 2×10 + 2×5'],
+         tip:'ظهرك ملامس البنش · كتفيك ثابتين للخلف · أنزل ببطء 3 ث'}]},
+      {id:'B',lbl:'🔁 SUPERSET A',lc:'#a855f7',type:'superset',sl:'3 راوند',rl:'60 ث',
+       note:'✅ نفس الدمبل للتمرينين — بدون تبديل أوزان داخل الراوند!',exs:[
+        {ar:'بنش مائل دمبل',en:'Incline DB Press',m:'صدر علوي',rp:'12',
+         w:['12 kg/يد','12 kg/يد','14.5 kg/يد'],c:['بار(2)+2×5','بار(2)+2×5','بار(2)+2×5+2×1.25'],
+         tip:'إمالة 30–45° · انزّل للصدر · افتح ذراعيك للجانب'},
+        {ar:'ضغط كتف دمبل',en:'DB Shoulder Press',m:'كتف أمامي + جانبي',rp:'12',
+         w:['12 kg/يد','12 kg/يد','14.5 kg/يد'],c:['↑ نفس الدمبل','↑ نفس الدمبل','↑ نفس الدمبل'],
+         tip:'لا تنزل تحت مستوى الأذن · لا زخم · تحكم كاملاً'}]},
+      {id:'C',lbl:'💪 ISOLATION',lc:'#eab308',type:'straight',sl:'3 سيتات',rl:'45 ث',
+       note:'⚙️ بعد الـ Superset: بدّل الدمبل لأوزان أخف للـ Lateral Raise',exs:[
+        {ar:'رفع جانبي دمبل',en:'Lateral Raise',m:'كتف جانبي',rp:'15',rest:'45 ث',
+         w:['4.5 kg/يد','4.5 kg/يد','7 kg/يد'],c:['بار(2)+2×1.25','بار(2)+2×1.25','بار(2)+4×1.25'],
+         tip:'مرفقك مكسور قليلاً · لا ترفع فوق الكتف · لا تهز الجسم'},
+        {ar:'ترايسبس كيبل',en:'Cable Tricep Pushdown',m:'ترايسبس',rp:'15',rest:'45 ث',
+         w:['10 kg','15 kg','20 kg'],c:['2×5 (كيبل)','2×5+4×1.25 (كيبل)','4×5 (كيبل)'],
+         tip:'مرفقيك ثابتين بجانب الجسم · الحركة من الساعد فقط'}]}
+    ]},
+  pull:{emoji:'🎯',title:'PULL DAY',sub:'ظهر · بايسبس',dur:'33 دق',col:'#3b82f6',
+    quote:'الظهر القوي = قوام كل الناس بيلاحظه! 💪',
+    sched:{morning:'05:50 صحي ← 06:00 إحماء ← 06:05 تمرين ← 06:38 شاور',evening:'19:00 إحماء ← 19:05 تمرين ← 19:38 شاور'},
+    secs:[
+      {id:'A',lbl:'⚡ MAIN LIFT',lc:'#3b82f6',type:'straight',sl:'4 سيتات',rl:'90 ث',exs:[
+        {ar:'لات بول داون',en:'Lat Pulldown',m:'ظهر عريض',rp:'8-10',rest:'90 ث',
+         w:['20 kg','22.5 kg','25 kg'],c:['2×10 (كيبل)','2×10+2×1.25 (كيبل)','2×10+4×1.25 (كيبل)'],
+         tip:'اسحب للصدر مش للذقن · كتفيك للأسفل والخلف · لا تهز'}]},
+      {id:'B',lbl:'🔁 SUPERSET A',lc:'#a855f7',type:'superset',sl:'3 راوند',rl:'60 ث',
+       note:'✅ كيبل (أقراص 10kg) + بار (أقراص 5kg) — بدون تعارض!',exs:[
+        {ar:'رو بالكيبل',en:'Cable Row',m:'ظهر وسط + سفل',rp:'12',
+         w:['20 kg','22.5 kg','25 kg'],c:['↑ نفس الكيبل','↑ نفس الكيبل','↑ نفس الكيبل'],
+         tip:'اسحب للخصر · كتفيك للخلف والأسفل بنهاية الحركة'},
+        {ar:'بايسبس بالبار',en:'Barbell Curl',m:'بايسبس',rp:'12',
+         w:['20 kg','22.5 kg','23.5 kg'],c:['بار+2×5','بار+2×5+2×1.25','بار+2×5+2×1.25+2×0.5'],
+         tip:'مرفقيك ثابتين · فقط الساعد يتحرك · لا تهز الجسم'}]},
+      {id:'C',lbl:'💪 ISOLATION',lc:'#eab308',type:'straight',sl:'3 سيتات',rl:'60 ث',
+       note:'⚙️ بعد Superset A: حوّل أقراص 5kg من البار للدمبل',exs:[
+        {ar:'هامر كيرل دمبل',en:'Hammer Curl',m:'بايسبس طويل + ساعد',rp:'12',rest:'60 ث',
+         w:['12 kg/يد','12 kg/يد','14.5 kg/يد'],c:['بار(2)+2×5','بار(2)+2×5','بار(2)+2×5+2×1.25'],
+         tip:'القبضة عمودية · لا تدور معصمك · تحكم بالعكسية'},
+        {ar:'فيس بول كيبل',en:'Face Pull',m:'كتف خلفي',rp:'15',rest:'45 ث',
+         w:['5 kg','7.5 kg','7.5 kg'],c:['4×1.25 (كيبل)','6×1.25 (كيبل)','6×1.25 (كيبل)'],
+         tip:'اسحب للوجه · مرفقيك للخلف وللفوق · حركة واسعة'}]}
+    ]},
+  legs:{emoji:'🦵',title:'LEGS DAY',sub:'أرجل · كور',dur:'37 دق',col:'#22c55e',
+    quote:'الكل بيكذب يوم الأرجل — أنت مش منهم! 🔥',
+    sched:{morning:'05:50 صحي ← 06:00 إحماء ← 06:05 تمرين ← 06:42 شاور',evening:'19:00 إحماء ← 19:05 تمرين ← 19:42 شاور'},
+    secs:[
+      {id:'A',lbl:'⚡ MAIN COMPOUND',lc:'#22c55e',type:'straight',sl:'4 + 3 سيتات',rl:'90–120 ث',
+       note:'✅ نفس البار للتمرينين — ما في تبديل أوزان بينهم',exs:[
+        {ar:'سكوات بالبار',en:'Barbell Squat',m:'أرجل كاملة',rp:'8-10',rest:'120 ث',
+         w:['30 kg','32.5 kg','40 kg'],c:['بار+2×10','بار+2×10+2×1.25','بار+2×10+2×5'],
+         tip:'ركبتيك تتبع أصابعك · ظهرك مستقيم · انزل لـ 90°'},
+        {ar:'رومانيان ديدليفت',en:'Romanian Deadlift',m:'أوتار الركبة · مؤخرة',rp:'10',rest:'90 ث',
+         w:['30 kg','32.5 kg','40 kg'],c:['↑ نفس البار','↑ نفس البار','↑ نفس البار'],
+         tip:'ظهرك مستقيم · الوزن قريب من الجسم · انحن من الحوض'}]},
+      {id:'B',lbl:'🔁 SUPERSET — ماكينة + كور',lc:'#a855f7',type:'superset',sl:'3 راوند',rl:'60 ث',
+       note:'⚙️ بعد ما تخلص البار: حوّل الأوزان للماكينة',exs:[
+        {ar:'ليج كيرل',en:'Leg Curl',m:'أوتار الركبة',rp:'12',
+         w:['15 kg','20 kg','25 kg'],c:['ماكينة','ماكينة','ماكينة'],
+         tip:'تحكم بالحركة العكسية · لا تترك الوزن يسقط'},
+        {ar:'كرانشز',en:'Crunches',m:'بطن علوي',rp:'20',
+         w:['جسم','جسم','جسم'],c:['—','—','—'],
+         tip:'لا تسحب رقبتك · الحركة من البطن فقط'}]},
+      {id:'C',lbl:'💪 ISOLATION + CORE',lc:'#eab308',type:'straight',sl:'3 سيتات',rl:'45 ث',exs:[
+        {ar:'ليج إكستنشن',en:'Leg Extension',m:'رباعية الرأس',rp:'15',rest:'45 ث',
+         w:['15 kg','20 kg','25 kg'],c:['ماكينة','ماكينة','ماكينة'],
+         tip:'لا تقفل الركبة في أعلى نقطة · تحكم بالعكسية'},
+        {ar:'بلانك',en:'Plank',m:'كور كامل',rp:'45 ث',rest:'30 ث',
+         w:['جسم','جسم','جسم'],c:['—','—','—'],
+         tip:'جسمك خط مستقيم · بطنك مشدود · لا ترفع مؤخرتك'}]}
+    ]},
+  cardio:{emoji:'🏃',title:'CARDIO DAY',sub:'تريدميل — حرق دهن مباشر',dur:'30–35 دق',col:'#06b6d4',
+    quote:'30 دقيقة = أكثر من نص كيلو دهن بالأسبوع! 🔥',
+    sched:{morning:'06:00 شغّل التريدميل ← 06:30 خلصت! 🎉',evening:'19:00 شغّل التريدميل ← 19:30 خلصت! 🎉'},
+    proto:[
+      {lbl:'🔥 إحماء', mins:['5 دق','5 دق','5 دق'],  spds:['4.5','4.5','4.5'],note:'خفيف جداً'},
+      {lbl:'⚡ رئيسي',mins:['20 دق','25 دق','25 دق'],spds:['6.5','7.0','7.5'],note:'تعرق واضح'},
+      {lbl:'❄️ تبريد',mins:['5 دق','5 دق','5 دق'],  spds:['4.0','4.0','4.0'],note:'هدوء النبض'},
+    ]},
+  rest:{emoji:'😴',title:'REST DAY',sub:'راحة كاملة',dur:'—',col:'#6b7280',
+    quote:'العضل ما بينمو بالجيم — بينمو بالراحة والنوم 💤',
+    tips:[
+      {e:'💧',t:'3 لتر ماء — لا تنسى حتى يوم الراحة'},
+      {e:'😴',t:'7+ ساعات نوم متواصل — الأهم بالتحول'},
+      {e:'🍗',t:'بروتين بالعشاء — بيض أو تونا أو دجاج'},
+      {e:'🚶',t:'مشي خفيف 20 دق — يسرّع الاسترداد'},
+      {e:'🧘',t:'استرتش خفيف 5–10 دق للعضلات المتعبة'},
+      {e:'📏',t:'يوم الأحد فقط: قس وزنك صباحاً قبل الأكل'},
+    ]}
+};
+
+const NUTRI={
+  targets:[
+    {lbl:'السعرات اليومية',val:'2,000',unit:'سعرة',col:'#f97316',full:true},
+    {lbl:'بروتين',val:'160',unit:'g',col:'#3b82f6'},
+    {lbl:'كربوهيدرات',val:'220',unit:'g',col:'#eab308'},
+    {lbl:'دهون',val:'55',unit:'g',col:'#a855f7'},
+    {lbl:'ماء',val:'3',unit:'لتر',col:'#06b6d4'},
+  ],
+  meals:[
+    {time:'5:30 ص',name:'قبل التمرين',emoji:'🌅',tag:'اختياري',tagCol:'#22c55e',
+     note:'لو تمرينك صبحي — شي خفيف يعطيك طاقة',
+     items:['🍌 موزة واحدة أو 3 تمرات','💧 كوب ماء كبير (500ml)'],
+     p:3,c:27,f:0,cal:120},
+    {time:'6:40 ص',name:'الإفطار',emoji:'🍳',tag:'بعد التمرين',tagCol:'#3b82f6',
+     note:'أهم وجبة — الجسم بيبني العضل هلق ولازم بروتين',
+     items:['🥚 3 بيض مقلي بزيت زيتون (ملعقة صغيرة)','🍞 شريحة خبز توست بر','☕ قهوة أو شاي بدون سكر','💧 كوب ماء'],
+     p:22,c:25,f:14,cal:314},
+    {time:'10:00 ص',name:'وجبة الضحى',emoji:'🥫',tag:'بالشغل',tagCol:'#f97316',
+     note:'خفيف وعالي البروتين — يمنع الجوع حتى الغداء',
+     items:['🥫 علبة تونا بالماء (185g) مع ليمون','🍎 ثمرة فاكهة: تفاحة أو برتقالة','💧 2 كوب ماء'],
+     p:35,c:22,f:2,cal:246},
+    {time:'1:30 م',name:'الغداء',emoji:'🍗',tag:'برا / مطعم',tagCol:'#ef4444',
+     note:'الوجبة الأهم بالشغل — خيارات عملية 100%',
+     items:['✅ الخيار الأول: شاورما دجاج بدون خبز (صحن)','✅ الخيار الثاني: دجاج مشوي + رز + سلطة','✅ الخيار الثالث: سلطة كبيرة + صدر دجاج مشوي','❌ تجنب: بطاطا مقلية · مشروبات سكرية · صوص زيادة'],
+     p:45,c:55,f:12,cal:508},
+    {time:'5:00 م',name:'سناك العصر',emoji:'🥛',tag:'اختياري',tagCol:'#6b7280',
+     note:'يمنع الأكل الزيادة بالعشاء — مفيد جداً',
+     items:['🥛 زبادي يوناني 200g سادة (بدون سكر)','🥜 20g مكسرات غير محمصة وغير مملحة'],
+     p:13,c:13,f:9,cal:185},
+    {time:'7:30 م',name:'العشاء',emoji:'🍽️',tag:'البيت',tagCol:'#22c55e',
+     note:'وجبة متوازنة — بروتين + خضار + كربوهيدرات خفيفة',
+     items:['🍗 صدر دجاج مشوي 200g (أو سمك)','🥗 خضار متنوعة مطبوخة أو سلطة كبيرة','🍚 نص كوب رز أبيض أو كوب رز بني'],
+     p:47,c:40,f:5,cal:389},
+    {time:'10:00 م',name:'سناك الليل',emoji:'🌙',tag:'قبل النوم',tagCol:'#4f46e5',
+     note:'بروتين بطيء الامتصاص — يحمي العضل أثناء النوم',
+     items:['🧀 قريش جبن 150g أو لبنة خفيفة','🥚 بيضتان مسلوقتان (اختياري)','💧 كوب ماء'],
+     p:22,c:8,f:2,cal:138},
+  ],
+  avoid:[
+    {e:'🥤',t:'مشروبات سكرية — كولا، عصير معبأ، نسكافيه محلى'},
+    {e:'🍟',t:'مقليات — بطاطا مقلية، فلافل، سمبوسة'},
+    {e:'🍕',t:'وجبات سريعة — بيتزا، برغر، ساندوتش كروسان'},
+    {e:'🍬',t:'حلويات يومية — كيك، شوكولاتة، بسكويت'},
+    {e:'🍞',t:'خبز أبيض كمية زيادة — توست واحد بالإفطار بس'},
+  ],
+  tips:[
+    {e:'⏰',t:'وجبة كل 3–4 ساعات — تمنع الجوع وتحافظ على العضل'},
+    {e:'🥩',t:'بروتين بكل وجبة — موزّع على اليوم أفضل من كله بوجبة واحدة'},
+    {e:'💧',t:'اشرب كوب ماء قبل كل وجبة — يقلل الكمية المأكولة تلقائياً'},
+    {e:'🎯',t:'اليوم اللي بتفشل فيه؟ الوجبة الجاية صح — مش اليوم كله ينهار'},
+    {e:'📱',t:'MyFitnessPal أول أسبوعين فقط — عشان تتعلم تقدّر الكميات'},
+  ]
+};
+
+// ── STATE ──
+let pi=0,di=0,mode='morning',view='workout';
+
+// ── UTILS ──
+const a=(col,x)=>col+x;
+function daysLeft(){return Math.max(0,Math.ceil((new Date('2026-08-09')-Date.now())/86400000))}
+function progress(){const d=daysLeft();return Math.min(98,Math.max(2,((79-d)/79)*100))}
+function tStatus(){
+  const n=Date.now(),ts=new Date('2026-05-28').getTime(),te=new Date('2026-06-10').getTime();
+  if(n>=ts&&n<te)return'travel';
+  if(n<ts)return'pre';
+  return'ok';
+}
+
+// ── HEADER ──
+function updateHdr(){
+  document.getElementById('daysLeft').textContent=daysLeft();
+  document.getElementById('pbFill').style.width=progress()+'%';
+}
+
+// ── VIEW TOGGLE ──
+function setView(v){
+  view=v;
+  const wo=document.getElementById('wo-area');
+  const nu=document.getElementById('nu-area');
+  const tw=document.getElementById('tab-wo');
+  const tn=document.getElementById('tab-nu');
+  if(v==='workout'){
+    wo.style.display='contents';nu.style.display='none';
+    tw.style.cssText='background:#f9731622;border-color:#f97316;color:#f97316';
+    tn.style.cssText='';
+  } else {
+    wo.style.display='none';nu.style.display='flex';
+    tn.style.cssText='background:#22c55e22;border-color:#22c55e;color:#22c55e';
+    tw.style.cssText='';
+    renderNutrition();
+  }
+}
+
+// ── PHASES ──
+function renderPhases(){
+  const ph=PHASES[pi];
+  document.getElementById('phBtns').innerHTML=PHASES.map((p,i)=>`
+    <button class="ph-btn" onclick="setPhase(${i})"
+      style="${i===pi?`border-color:${p.col};background:${a(p.col,'18')}`:''}">
+      <span class="ph-n" style="color:${i===pi?p.col:'#4b5563'}">${p.n}</span>
+      <span class="ph-wk" style="color:${i===pi?a(p.col,'bb'):'#374151'}">${p.wks}</span>
+      <span class="ph-fc" style="color:${i===pi?'#e5e7eb':'#4b5563'}">${p.focus}</span>
+    </button>`).join('');
+  const t=document.getElementById('phTip');
+  t.innerHTML=`<span style="color:${ph.col};font-weight:700">📌 </span><span style="color:#d1d5db">${ph.tip}</span>`;
+  t.style.cssText=`border-color:${a(ph.col,'40')};background:${a(ph.col,'14')}`;
+}
+
+// ── DAY TABS ──
+function renderDayTabs(){
+  document.getElementById('dayTabs').innerHTML=DAYS.map(d=>`
+    <button class="day-btn" onclick="setDay(${d.id})"
+      style="${di===d.id?`border-color:${d.c};background:${a(d.c,'1a')}`:''}">
+      <span class="day-e">${d.e}</span>
+      <span class="day-s" style="color:${di===d.id?'#fff':'#6b7280'}">${d.s}</span>
+      <span class="day-tag" style="color:${d.c}">${d.tag}</span>
+    </button>`).join('');
+}
+
+// ── EXERCISE CARD ──
+function exCard(ex,_pi){
+  const ph=PHASES[_pi];
+  const bw=ex.w[_pi]==='جسم',tm=ex.rp.includes('ث'),sm=ex.c[_pi].startsWith('↑');
+  const pills=PHASES.map((p,wi)=>{
+    const act=wi===_pi;
+    const wv=ex.w[wi].replace('/يد','').replace(' kg','').replace('جسم','BW');
+    return`<div class="ph-pill" style="${act?`background:${p.col}`:''}">
+      <span class="ph-pill-n" style="color:${act?'#fff':'#6b7280'}">P${wi+1}</span>
+      <span class="ph-pill-w" style="color:${act?'#fff':'#9ca3af'}">${wv}</span>
+    </div>`;
+  }).join('');
+  const cfg=(!bw&&ex.c[_pi]!=='—')?`<div class="w-cfg" style="color:${sm?'#4ade80':'#9ca3af'}">${ex.c[_pi]}</div>`:'';
+  return`<div class="ex-card">
+    <div class="ex-nr">
+      <div><div class="ex-ar">${ex.ar}</div><div class="ex-en">${ex.en} · ${ex.m}</div></div>
+      <div class="rep-b" style="background:${a(ph.col,'22')};border:1px solid ${a(ph.col,'44')}">
+        <span class="rep-n" style="color:${ph.col}">${ex.rp}</span>
+        ${!bw&&!tm?'<span class="rep-l"> تكرار</span>':''}
+      </div>
+    </div>
+    <div class="w-box" style="background:${a(ph.col,'12')};border:1px solid ${a(ph.col,'38')}">
+      <div class="w-row">
+        <div class="w-left">
+          <div class="w-ph-lbl">الوزن — ${ph.full}</div>
+          <div class="w-num" style="color:${ph.col}">${ex.w[_pi]}</div>${cfg}
+        </div>
+        <div class="ph-pills">${pills}</div>
+      </div>
+    </div>
+    <div class="ex-tip"><div class="ex-tip-t">💡 ${ex.tip}</div></div>
+    ${ex.rest?`<div class="ex-rest">⏱ راحة ${ex.rest}</div>`:''}
+  </div>`;
+}
+
+// ── SECTION ──
+function secHTML(sec,_pi){
+  const sb=(sec.type==='superset'&&sec.exs.length>1)?
+    `<div class="ss-banner"><span class="ss-banner-t">${sec.exs[0].ar} → مباشرة → ${sec.exs[1].ar} → راحة ${sec.rl}</span></div>`:'';
+  const sn=sec.note?`<div class="sec-note"><span class="sec-note-t">${sec.note}</span></div>`:'';
+  return`<div class="wo-sec">
+    <div class="sec-hdr">
+      <span class="sec-hdr-t" style="color:${sec.lc}">${sec.lbl}</span>
+      <div class="sec-pills"><span class="pill">${sec.sl}</span><span class="pill">⏱ ${sec.rl}</span></div>
+    </div>${sn}${sb}
+    ${sec.exs.map(ex=>exCard(ex,_pi)).join('')}
+  </div>`;
+}
+
+// ── WORKOUT CONTENT ──
+function renderContent(){
+  const ph=PHASES[pi],day=DAYS[di],wo=WO[day.type],ts=tStatus();
+  let h='';
+  if(ts==='travel'){
+    h+=`<div class="n-blue"><span style="font-size:26px;flex-shrink:0">🇨🇳</span>
+      <div><div style="font-weight:800;font-size:14px;color:#93c5fd">أنت بالصين حالياً</div>
+      <div style="font-size:11px;color:#60a5fa;margin-top:3px">Phase 1 تبدأ ١٠ يونيو بعد رجوعك — استرح ومشي كثير 🚶</div></div></div>`;
+  } else if(ts==='pre'){
+    h+=`<div class="n-pre"><span style="font-size:22px;flex-shrink:0">✈️</span>
+      <div><div style="font-weight:700;font-size:13px;color:#fde68a">هالأسبوع: ابدأ قبل السفر!</div>
+      <div style="font-size:11px;color:#d97706;margin-top:3px">سبت PUSH · أحد CARDIO · اثنين PULL · ثلاثاء CARDIO · خميس ✈️</div></div></div>`;
+  }
+  const durBox=wo.dur!=='—'?`<div class="d-dur"><span class="d-dur-l">المدة</span><span class="d-dur-v" style="color:${wo.col}">${wo.dur}</span></div>`:'';
+  const modeBlock=day.type!=='rest'?`
+    <div class="mode-row">
+      <button class="mode-btn" onclick="setMode('morning')" style="${mode==='morning'?'background:rgba(245,158,11,.15);border-color:#f59e0b;color:#fbbf24':''}">🌅 صباحي</button>
+      <button class="mode-btn" onclick="setMode('evening')" style="${mode==='evening'?'background:rgba(79,70,229,.2);border-color:#6366f1;color:#a5b4fc':''}">🌙 مسائي</button>
+    </div>
+    <div class="sched-box"><span class="sched-txt">⏰ ${wo.sched[mode]}</span></div>`:'';
+  h+=`<div class="d-hdr">
+    <div class="d-title-row">
+      <div class="d-title-l"><span class="d-emoji">${wo.emoji}</span>
+        <div><div style="font-weight:900;font-size:20px;letter-spacing:-.5px">${wo.title}</div>
+        <div style="font-size:11px;color:#6b7280;margin-top:2px">${wo.sub}</div></div>
+      </div>${durBox}
+    </div>
+    <div class="q-box" style="border-color:${wo.col}"><span class="q-text" style="color:${a(wo.col,'cc')}">"${wo.quote}"</span></div>
+    ${modeBlock}</div>`;
+  if(day.type==='rest'){
+    h+=`<div style="display:flex;flex-direction:column;gap:8px">
+      ${wo.tips.map(t=>`<div class="rt-tip"><span class="rt-e">${t.e}</span><span class="rt-t">${t.t}</span></div>`).join('')}</div>`;
+  } else if(day.type==='cardio'){
+    h+=`<div style="display:flex;flex-direction:column;gap:10px">
+      ${wo.proto.map(r=>`<div class="c-row"><div class="c-row-t">${r.lbl}</div>
+        <div class="c-grid">
+          <div class="c-cell"><span class="c-cell-l">المدة</span><span class="c-cell-v" style="color:#fff">${r.mins[pi]}</span></div>
+          <div class="c-cell"><span class="c-cell-l">السرعة</span><span class="c-cell-v" style="color:#06b6d4">${r.spds[pi]} <span style="font-size:10px;color:#6b7280">km/h</span></span></div>
+          <div class="c-cell"><span class="c-cell-l">الشعور</span><span class="c-cell-v" style="color:#e5e7eb;font-size:12px">${r.note}</span></div>
+        </div></div>`).join('')}
+      <div class="n-cyan">💡 كل أسبوعين: ارفع السرعة 0.5 km/h — لازم جسمك يبقى مش متعود</div></div>`;
+  } else {
+    h+=`<div style="display:flex;flex-direction:column;gap:10px">
+      ${wo.secs.map(s=>secHTML(s,pi)).join('')}
+      <div class="n-cyan">🏃 <strong>اختياري:</strong> 10 دق تريدميل بعد التمرين (6.5 km/h) = حرق إضافي</div>
+      <div class="n-yel">⚙️ <strong>الأقراص:</strong> الخضر ↑ = ما في تبديل — رتّب الأثقال قبل كل سيكشن</div></div>`;
+  }
+  const el=document.getElementById('content');
+  el.innerHTML=h;el.classList.remove('fi');void el.offsetWidth;el.classList.add('fi');
+}
+
+// ── NUTRITION ──
+function renderNutrition(){
+  const nu=document.getElementById('nu-area');
+  // Targets
+  const tgHTML=`<div class="wo-sec">
+    <div class="sec-hdr"><span class="sec-hdr-t" style="color:#f97316">🎯 الأهداف اليومية</span></div>
+    <div class="macro-grid">
+      ${NUTRI.targets.map(t=>`
+        <div class="macro-card ${t.full?'macro-card-full':''}" style="border-color:${a(t.col,'33')}">
+          <div class="macro-val" style="color:${t.col}">${t.val}</div>
+          <span class="macro-unit">${t.unit}</span>
+          <span class="macro-lbl">${t.lbl}</span>
+        </div>`).join('')}
+    </div>
+  </div>`;
+
+  // Meals
+  const mlHTML=NUTRI.meals.map(m=>`
+    <div class="meal-card">
+      <div class="meal-head">
+        <span class="meal-time">${m.time}</span>
+        <span class="meal-tag" style="background:${a(m.tagCol,'22')};color:${m.tagCol}">${m.tag}</span>
+      </div>
+      <div class="meal-title-row">
+        <span class="meal-emoji">${m.emoji}</span>
+        <span class="meal-name">${m.name}</span>
+      </div>
+      <div class="meal-note">${m.note}</div>
+      <div class="meal-items">
+        ${m.items.map(i=>`<span class="meal-item">${i}</span>`).join('')}
+      </div>
+      <div class="meal-macros">
+        <span class="m-chip" style="color:#3b82f6">💪 ${m.p}g بروتين</span>
+        <span class="m-chip" style="color:#eab308">🍚 ${m.c}g كارب</span>
+        <span class="m-chip" style="color:#a855f7">🥑 ${m.f}g دهن</span>
+        <span class="m-chip" style="color:#f97316">🔥 ${m.cal} kcal</span>
+      </div>
+    </div>`).join('');
+
+  // Avoid
+  const avHTML=NUTRI.avoid.map(x=>`
+    <div class="avoid-item">
+      <span class="avoid-e">${x.e}</span>
+      <span class="avoid-t">${x.t}</span>
+    </div>`).join('');
+
+  // Tips
+  const tpHTML=NUTRI.tips.map(x=>`
+    <div class="ntip-item">
+      <span class="ntip-e">${x.e}</span>
+      <span class="ntip-t">${x.t}</span>
+    </div>`).join('');
+
+  // Total summary
+  const totCal=NUTRI.meals.reduce((s,m)=>s+m.cal,0);
+  const totP=NUTRI.meals.reduce((s,m)=>s+m.p,0);
+
+  nu.innerHTML=`
+    ${tgHTML}
+    <div class="sec-lbl">🍽️ جدول الوجبات اليومي</div>
+    <div style="background:#111827;border-radius:14px;padding:10px 14px;border:1px solid #1f2937;margin-bottom:4px">
+      <div style="font-size:12px;color:#9ca3af">مجموع الخطة: <span style="color:#f97316;font-weight:700">${totCal} kcal</span> · بروتين: <span style="color:#3b82f6;font-weight:700">${totP}g</span> · الهدف 2000 kcal</div>
+    </div>
+    ${mlHTML}
+    <div class="sec-lbl">🚫 تجنّب هذا</div>
+    <div style="display:flex;flex-direction:column;gap:8px">${avHTML}</div>
+    <div class="sec-lbl">💡 نصائح ذهبية</div>
+    <div style="display:flex;flex-direction:column;gap:8px">${tpHTML}</div>
+    <div class="n-yel">⚠️ <strong>قاعدة الـ 80/20:</strong> التزم 80% من الوقت — الـ 20% الثانية مش بتكسر الخطة. الاستمرارية أهم من الكمال</div>
+  `;
+  nu.classList.remove('fi');void nu.offsetWidth;nu.classList.add('fi');
+}
+
+// ── EVENTS ──
+function setPhase(i){pi=i;renderPhases();renderContent()}
+function setDay(i){di=i;renderDayTabs();renderContent();setTimeout(()=>document.getElementById('content').scrollIntoView({behavior:'smooth',block:'start'}),50)}
+function setMode(m){mode=m;renderContent()}
+
+// ── INIT ──
+updateHdr();renderPhases();renderDayTabs();renderContent();
+setView('workout');
+setInterval(updateHdr,60000);
+</script>
+</body>
+</html>
